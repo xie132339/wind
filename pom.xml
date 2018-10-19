@@ -74,6 +74,15 @@
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-pool</artifactId>
+		</dependency>
+		<!-- hystrix 熔断机制 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-hystrix</artifactId>
+		</dependency>
 	</dependencies>
 
 
@@ -117,5 +126,6 @@
 		<module>springcloud_wind_eureka</module>
 		<module>springcloud_wind_comm</module>
 		<module>springcloud_wind_user</module>
+		<module>springcloud-wind-hystrix</module>
 	</modules>
 </project>
