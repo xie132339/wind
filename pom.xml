@@ -78,11 +78,21 @@
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>activemq-pool</artifactId>
 		</dependency>
-		<!-- hystrix 熔断机制 -->
+		<!-- 热部署 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-hystrix</artifactId>
+			<version>1.4.6.RELEASE</version>
 		</dependency>
+		<dependency>
+			<groupId>com.netflix.hystrix</groupId>
+			<artifactId>hystrix-javanica</artifactId>
+		</dependency>
+
 	</dependencies>
 
 
@@ -100,15 +110,21 @@
 		</dependencies>
 	</dependencyManagement>
 
+	<!-- 构建项目 -->
 	<build>
-		<!--plugin元素包含描述插件所需要的信息。 -->
+
 		<plugins>
-			<!-- 引入 spring-boot插件模块 -->
+			<!-- 配置jdk版本 -->
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
 			</plugin>
 		</plugins>
+
 	</build>
 
 	<!-- 环境设置 -->

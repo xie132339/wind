@@ -7,14 +7,8 @@
 		<artifactId>springcloud_wind_parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>springcloud_wind_eureka</artifactId>
-	<name>springcloud_wind_eureka</name>
-	<description>eureka 服务注册中心</description>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-		</dependency>
-	</dependencies>
+	<groupId>springcloud_wind_hystrix</groupId>
+	<artifactId>springcloud_wind_hystrix</artifactId>
+	<name>springcloud_wind_hystrix</name>
+	<description>hystrix 熔断机制</description>
 </project>
