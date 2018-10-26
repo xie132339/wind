@@ -6,6 +6,10 @@ spring:
          uri: http://localhost:8088
 server:
    port: 8761
+   #开启Eureka的自我保护机制
+   enable-self-preservation: true
+   #清理无效节点的时间间隔
+   eviction-interval-timer-in-ms: 5000
 eureka:
    instance:
       hostname: localhost

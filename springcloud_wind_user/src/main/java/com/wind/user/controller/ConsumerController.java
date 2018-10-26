@@ -16,4 +16,9 @@ public class ConsumerController {
     public String helloConsumer() {
 	return helloService.helloService();
     }
+
+    @RequestMapping(value = "index")
+    public String index() {
+	return "index....";
+    }
 }

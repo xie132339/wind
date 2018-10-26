@@ -7,16 +7,14 @@
 		<artifactId>springcloud_wind_parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>springcloud_wind_hystrix</groupId>
-	<artifactId>springcloud_wind_hystrix</artifactId>
-	<name>springcloud_wind_hystrix</name>
-	<description>hystrix 熔断机制</description>
+	<groupId>springcloud_wind_zuul</groupId>
+	<artifactId>springcloud_wind_zuul</artifactId>
+	<name>springcloud_wind_zuul</name>
+	<description>zuul 网关</description>
 	<dependencies>
-		<!-- 仪表 可视化界面管理 -->
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
-			<version>1.4.6.RELEASE</version>
-		</dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+        </dependency>
 	</dependencies>
 </project>

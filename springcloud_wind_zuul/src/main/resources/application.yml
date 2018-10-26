@@ -1,0 +1,35 @@
+eureka:
+  client:
+    serviceUrl:
+      #注册中心的地址
+      defaultZone: http://localhost:8761/eureka/
+server:
+  #当前服务端口号
+  port: 8919
+# 上传大文件得将超时时间设置长一些，否则会报超时异常。
+hystrix: 
+   command: 
+      default: 
+         execution: 
+            isolation: 
+               thread: 
+                  timeoutInMilliseconds: 60000
+ribbon:
+   ConnectTimeout: 3000
+   ReadTimeout: 60000
+spring:
+  application:
+    #当前应用名称
+    name: zuul-service
+zuul:
+   ignoredServices: '*'
+   routes:
+      uploadfile: 
+         path: /fileoperation/**
+         serviceId: fileoperation-service
+      users: 
+         path: /myusers/**
+         serviceId: user-service
+      orders: 
+         path: /myorders/**
+         serviceId: order-service

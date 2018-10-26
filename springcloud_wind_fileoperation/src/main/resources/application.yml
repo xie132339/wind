@@ -1,0 +1,42 @@
+server:
+   port: 8765
+eureka:
+   client: # 客户端进行Eureka注册的配置
+      serviceUrl:
+         defaultZone: http://localhost:8761/eureka/
+spring:
+   servlet:
+      #文件上传配置
+      multipart: 
+         enabled: true   # 默认开启文件上传  启用http上传处理
+         max-file-size: 2000MB # 设置单个文件的最大长度
+         max-request-size: 2500MB # 设置最大的请求文件的大小
+         #file-size-threshold: 1MB  # 当上传文件达到1MB的时候进行磁盘写入
+         location: 'E:/upload/temp'  # 上传的临时目录
+   #http 编码
+   http:
+      encoding:
+         force: true
+         charset: UTF-8
+   application:
+      name: fileoperation-service
+   #.ftl 文件配置
+   freemarker:
+      allow-request-override: false
+      cache: false
+      check-template-location: true
+      charset: UTF-8
+      content-type: text/html; charset=utf-8
+      expose-request-attributes: false
+      expose-session-attributes: false
+      expose-spring-macro-helpers: false
+      suffix: .ftl
+      template-loader-path: classpath:/templates
+   #.html 文件配置
+   thymeleaf:
+      cache: false
+      prefix: classpath:/templates/
+      suffix: .html
+      encoding: UTF-8
+      content-type: text/html
+      mode: HTML5
