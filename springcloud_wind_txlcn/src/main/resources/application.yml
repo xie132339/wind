@@ -1,0 +1,80 @@
+#端口
+server:
+   port: 7970
+   
+eureka:
+   instance:
+      hostname: ${hostname:localhost}
+      #实例名称显示IP配置
+      preferIpAddress: true
+   server:
+      peerEurekaNodesUpdateIntervalMs: 60000
+      enableSelfPreservation: false
+   client:
+      serviceUrl:
+         defaultZone: http://localhost:8761/eureka/
+      #开启健康检查（需要spring-boot-starter-actuator依赖）
+      healthcheck:
+         enabled: true
+   
+#Eureka服务注册中心也会将自己作为客户端来尝试注册它自己，所以我们需要禁用它的客户端注册行为。
+#eureka:
+  #client:
+    #registerWithEureka: false   
+    #fetchRegistry: false
+    
+#tx-manager不得修改
+spring:
+   application:
+      name: tx-manager
+   mvc:
+      static-path-pattern: /**
+   resources:
+      static-locations: classpath:/static/
+      
+   #redis 单点环境配置
+   #redis主机地址   
+   redis:
+      host: 127.0.0.1
+      #redis主机端口
+      port: 6379
+      timeout: 0
+      #redis链接密码
+      password: test123
+      pool:
+         maxActive: 10
+         maxWait: -1
+         maxIdle: 5
+         minIdle: 0
+
+   #mysql jdbc连接
+   datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/tx-manager?characterEncoding=UTF-8
+      username: root
+      password: root
+  
+###############################LCN-start########################
+tm:
+   transaction:
+      netty:
+         delaytime: 5
+         hearttime: 15
+   redis:
+      savemaxtime: 30
+   #socket server Socket对外服务端口
+   #TxManager的LCN协议的端口
+   socket:
+      port: 9999
+      maxconnection: 100
+   compensate:
+      auto: false
+      notifyUrl: http://ip:port/path
+      tryTime: 30
+      maxWaitTime: 5000
+      
+
+logging:
+   level:
+      com:
+         codingapi: debug     

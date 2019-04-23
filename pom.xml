@@ -89,7 +89,10 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
-
+		<dependency>  
+			<groupId>org.springframework.boot</groupId>  
+			<artifactId>spring-boot-configuration-processor</artifactId>  
+		</dependency>
 	</dependencies>
 
 
@@ -139,10 +142,15 @@
 		<module>springcloud_wind_eureka</module>
 		<module>springcloud_wind_comm</module>
 		<module>springcloud_wind_user</module>
-		<module>springcloud-wind-hystrix</module>
+		<module>springcloud_wind_hystrix</module>
 		<module>springcloud_wind_zuul</module>
 		<module>springcloud_wind_fileupload</module>
 		<module>springcloud_wind_fileoperation</module>
 		<module>springcloud_wind_order</module>
+		<module>springcloud_wind_queen_ant</module>
+		<module>springcloud_wind_rabbitmq</module>
+		<module>springcloud_wind_redis</module>
+		<module>springcloud_wind_po</module>
+		<module>springcloud_wind_txlcn</module>
 	</modules>
 </project>

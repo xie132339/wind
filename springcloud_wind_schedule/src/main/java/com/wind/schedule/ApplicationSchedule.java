@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class ApplicationSchedule {
-	public static void main(String[] args) {
-		SpringApplication.run(ApplicationSchedule.class, args);
-	}
+    public static void main(String[] args) {
+	SpringApplication.run(ApplicationSchedule.class, args);
+    }
 }
