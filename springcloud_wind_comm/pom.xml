@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>springcloud_wind</groupId>
-        <artifactId>springcloud_wind_parent</artifactId>
+        <artifactId>springcloud_wind_parent</artifactId> 
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>springcloud_wind</groupId>
