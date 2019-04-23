@@ -1,45 +1,45 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>springcloud_wind</groupId>
-		<artifactId>springcloud_wind_parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</parent>
-	<groupId>springcloud_wind_redis</groupId>
-	<artifactId>springcloud_wind_redis</artifactId>
-	<name>springcloud_wind_redis</name>
-	<description>springboot redis</description>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>springcloud_wind</groupId>
+        <artifactId>springcloud_wind_parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <groupId>springcloud_wind_redis</groupId>
+    <artifactId>springcloud_wind_redis</artifactId>
+    <name>springcloud_wind_redis</name>
+    <description>springboot redis</description>
 
-	<dependencies>
-		<!-- redis添加 -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-redis</artifactId>
-		</dependency>
-		<!-- 第三方验证码库 -->
-		<dependency>
-			<groupId>cn.apiclub.tool</groupId>
-			<artifactId>simplecaptcha</artifactId>
-			<version>1.2.2</version>
-		</dependency>
-	</dependencies>
-	<!-- 构建项目 -->
-	<build>
-		<finalName>springcloud-wind-redis</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+    <dependencies>
+        <!-- redis添加 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <!-- 第三方验证码库 -->
+        <dependency>
+            <groupId>cn.apiclub.tool</groupId>
+            <artifactId>simplecaptcha</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+    </dependencies>
+    <!-- 构建项目 -->
+    <build>
+        <finalName>springcloud-wind-redis</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
