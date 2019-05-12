@@ -1,23 +1,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>springcloud_wind</groupId>
-		<artifactId>springcloud_wind_parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</parent>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>springcloud_wind</groupId>
+        <artifactId>springcloud_wind_parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
 
-	<!-- 集成RabbitMQ -->
-	<dependencies>
-		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-amqp</artifactId>
-		</dependency>
-	</dependencies>
+    <!-- 集成RabbitMQ -->
+    <dependencies>
 
-	<artifactId>springcloud_wind_user</artifactId>
-	<name>springcloud_wind_user</name>
-	<description>用户模块</description>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+    </dependencies>
+
+    <artifactId>springcloud_wind_user</artifactId>
+    <name>springcloud_wind_user</name>
+    <description>用户模块</description>
 </project>
