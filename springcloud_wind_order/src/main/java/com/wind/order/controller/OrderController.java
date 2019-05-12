@@ -11,6 +11,9 @@ public class OrderController {
     @Value("${server.port}")
     private String port;
 
+    @Value("${start.info}")
+    private String info;
+
     /**
      * 获取服务端口号
      * 
@@ -18,6 +21,6 @@ public class OrderController {
      */
     @GetMapping("/getOrderPort")
     public String getOrderPort() {
-	return "order-service port：" + port;
+        return "order-service port：" + port + "--" + info;
     }
 }
