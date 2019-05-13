@@ -1,20 +1,26 @@
-#选择启动环境
-
-eureka:
-  client:
-    serviceUrl:
-      #注册中心的地址
-      defaultZone: http://localhost:8761/eureka/
-server:
-  #当前服务端口号
-   port: 8766
-   
 spring:
    profiles:
+      #选择启动环境
       active: dev
    application:
     #当前应用名称
       name: order-service
+     
+server:
+  #当前服务端口号
+   port: 8766
+   
+eureka:
+   instance:
+      instance-id: ${spring.application.name}:${server.port}
+      preferIpAddress: true                       # 设置微服务调用地址为IP优先（缺省为false）
+      leaseRenewalIntervalInSeconds: 5          # 心跳时间，即服务续约间隔时间（缺省为30s）
+      leaseExpirationDurationInSeconds: 15      # 发呆时间，即服务续约到期时间（缺省为90s）
+   client:
+      serviceUrl:
+         #注册中心的地址
+         defaultZone: http://localhost:8761/eureka/
+
 feign:
    hystrix:
       enabled: true
