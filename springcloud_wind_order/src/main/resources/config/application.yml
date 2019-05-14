@@ -24,3 +24,20 @@ eureka:
 feign:
    hystrix:
       enabled: true
+
+info:
+   build:
+      artifact: ${project.artifactId}
+      name: ${project.name}
+      description: ${project.description}
+      version: ${project.version}
+      
+logging:
+   config: classpath:logback.xml
+   path: D:/logs/${spring.application.name}/${spring.application.name}.log
+   level:
+      root: INFO
+      org:
+         springframework:
+            web: DEBUG
+         hibernate: ERROR

@@ -1,6 +1,24 @@
 spring:
+   application:
+      name: schedule-service
    activemq:
       broker-url: tcp://localhost:61616
       in-memory: true
       pool:
          enabled: false
+server:
+  #当前服务端口号
+   port: 8769
+   
+eureka:
+   instance:
+      instance-id: ${spring.application.name}:${server.port}
+      preferIpAddress: true                        # 设置微服务调用地址为IP优先（缺省为false）
+      leaseRenewalIntervalInSeconds: 5             # 心跳时间，即服务续约间隔时间（缺省为30s）
+      leaseExpirationDurationInSeconds: 15         # 发呆时间，即服务续约到期时间（缺省为90s）
+   client:
+      healthcheck:
+         enabled: true                             # 开启健康检查（依赖spring-boot-starter-actuator）
+      serviceUrl:
+         #注册中心的地址
+         defaultZone: http://localhost:8761/eureka/
