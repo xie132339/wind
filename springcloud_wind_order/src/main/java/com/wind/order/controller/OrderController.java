@@ -28,6 +28,9 @@ public class OrderController {
     @Value("${start.info}")
     private String info;
 
+    @Value("${host.ifs}")
+    private String ifs;
+
     /**
      * 获取服务端口号
      * 
@@ -37,7 +40,7 @@ public class OrderController {
     @ApiOperation(value = "订单测试")
     public String getOrderPort() {
         log.debug("测试 id: {} and port: {}", port, info);
-        return "order-service port：" + port + "--" + info;
+        return "order-service port：" + port + "--" + info + "ifs" + ifs;
     }
 
     @GetMapping("/add")
