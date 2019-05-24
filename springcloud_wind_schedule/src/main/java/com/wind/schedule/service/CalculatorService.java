@@ -10,4 +10,7 @@ public interface CalculatorService {
 
     @RequestMapping(value = "/order/add", method = RequestMethod.GET)
     int addService(@RequestParam("a") int a, @RequestParam("b") int b);
+    
+    @RequestMapping(value = "/order/getOrderPort", method = RequestMethod.GET)
+    String getOrderPort();
 }

@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
@@ -28,7 +30,7 @@ public class OrderController {
     @Value("${start.info}")
     private String info;
 
-    @Value("${host.ifs}")
+    @Value("${test:config server not found}")
     private String ifs;
 
     /**
@@ -38,8 +40,10 @@ public class OrderController {
      */
     @GetMapping("/getOrderPort")
     @ApiOperation(value = "订单测试")
+    @HystrixCommand(fallbackMethod = "hiError")
     public String getOrderPort() {
         log.debug("测试 id: {} and port: {}", port, info);
+        int a = 2 / 0;
         return "order-service port：" + port + "--" + info + "ifs" + ifs;
     }
 
@@ -47,5 +51,9 @@ public class OrderController {
     public int add(int a, int b) {
         int result = a + b;
         return result;
+    }
+
+    public String hiError(String name) {
+        return "hi," + name + ",sorry,error!";
     }
 }

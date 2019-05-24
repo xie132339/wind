@@ -14,6 +14,10 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.*;
 
+/**
+ * 深度拷贝对象信息
+ *
+ */
 public class EnhanceBeanUtils extends BeanUtils {
     private final static String CLAZZ_LIST = "java.util.List";
 

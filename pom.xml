@@ -37,11 +37,6 @@
 
     <!--该元素描述了项目相关的所有依赖。 这些依赖组成了项目构建过程中的一个个环节。它们自动从项目定义的仓库中下载。 -->
     <dependencies>
-        <!-- 注册中心 eureka client -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
         <!-- spring-boot web模块 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -84,12 +79,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <!-- hystrix 熔断机制 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix</artifactId>
-            <version>1.4.6.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>com.netflix.hystrix</groupId>
@@ -200,5 +189,7 @@
         <module>springcloud_wind_po</module>
         <module>springcloud_wind_txlcn</module>
     <module>springcloud_wind_configserver</module>
-  </modules>
+    <module>springcloud_wind_config</module>
+    <module>springcloud_wind_log</module>
+    </modules>
 </project>

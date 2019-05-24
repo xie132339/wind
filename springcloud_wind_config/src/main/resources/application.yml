@@ -1,22 +1,18 @@
 spring:
-   profiles:
-      #选择启动环境
-      active: dev
    application:
     #当前应用名称
-      name: order-service
+      name: config-service
+   profiles:
+      active: native #设置为本地启动的方式，而不是通过git
    cloud:
       config:
-         uri: http://127.0.0.1:7777/  # 指定配置中心的地址
-         profile: dev                 # 指定配置中心配置文件的{profile}
-         label: master                 # 指定配置中心配置文件的{label}
-         discovery:
-            enabled: true              # 使用注册中心里面已注册的配置中心
-            serviceId: config-service  # 指定配置中心注册到注册中心的serviceId
-     
+         server:
+            native:
+               searchLocations: classpath:/config   # 配置文件所在目录，classpath（类路径）和（系统文件路径） file两种  
+            
 server:
   #当前服务端口号
-   port: 8766
+   port: 7777
    
 eureka:
    instance:

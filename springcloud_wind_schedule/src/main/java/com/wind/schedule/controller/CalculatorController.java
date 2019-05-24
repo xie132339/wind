@@ -19,4 +19,9 @@ public class CalculatorController {
         int result = calculatorService.addService(a, b);
         return result;
     }
+
+    @GetMapping("/getOrderPort")
+    public String getOrderPort() {
+        return calculatorService.getOrderPort();
+    }
 }
