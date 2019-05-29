@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wind.user.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.wind.user.dto.UserDTO" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="login_name" property="loginName" jdbcType="VARCHAR" />
+    <result column="login_password" property="loginPassword" jdbcType="VARCHAR" />
+    <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+    <result column="role" property="role" jdbcType="BIGINT" />
+    <result column="phone" property="phone" jdbcType="BIGINT" />
+    <result column="set" property="set" jdbcType="VARCHAR" />
+    <result column="birth_date" property="birthDate" jdbcType="TIMESTAMP" />
+    <result column="valid" property="valid" jdbcType="VARCHAR" />
+    <result column="grade" property="grade" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="marriage" property="marriage" jdbcType="VARCHAR" />
+    <result column="native_place" property="nativePlace" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, login_name, login_password, nickname, role, phone, set, birth_date, valid, grade, 
+    email, marriage, native_place, create_date, update_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_db.user
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from user_db.user
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.wind.user.dto.UserDTO" >
+    insert into user_db.user (login_name, login_password, 
+      nickname, role, phone, 
+      set, birth_date, valid, 
+      grade, email, marriage, 
+      native_place, create_date, update_date
+      )
+    values (#{loginName,jdbcType=VARCHAR}, #{loginPassword,jdbcType=VARCHAR}, 
+      #{nickname,jdbcType=VARCHAR}, #{role,jdbcType=BIGINT}, #{phone,jdbcType=BIGINT}, 
+      #{set,jdbcType=VARCHAR}, #{birthDate,jdbcType=TIMESTAMP}, #{valid,jdbcType=VARCHAR}, 
+      #{grade,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{marriage,jdbcType=VARCHAR}, 
+      #{nativePlace,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{updateDate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wind.user.dto.UserDTO" >
+    insert into user_db.user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="loginName != null" >
+        login_name,
+      </if>
+      <if test="loginPassword != null" >
+        login_password,
+      </if>
+      <if test="nickname != null" >
+        nickname,
+      </if>
+      <if test="role != null" >
+        role,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="set != null" >
+        set,
+      </if>
+      <if test="birthDate != null" >
+        birth_date,
+      </if>
+      <if test="valid != null" >
+        valid,
+      </if>
+      <if test="grade != null" >
+        grade,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="marriage != null" >
+        marriage,
+      </if>
+      <if test="nativePlace != null" >
+        native_place,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="updateDate != null" >
+        update_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="loginName != null" >
+        #{loginName,jdbcType=VARCHAR},
+      </if>
+      <if test="loginPassword != null" >
+        #{loginPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null" >
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="role != null" >
+        #{role,jdbcType=BIGINT},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=BIGINT},
+      </if>
+      <if test="set != null" >
+        #{set,jdbcType=VARCHAR},
+      </if>
+      <if test="birthDate != null" >
+        #{birthDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="valid != null" >
+        #{valid,jdbcType=VARCHAR},
+      </if>
+      <if test="grade != null" >
+        #{grade,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="marriage != null" >
+        #{marriage,jdbcType=VARCHAR},
+      </if>
+      <if test="nativePlace != null" >
+        #{nativePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wind.user.dto.UserDTO" >
+    update user_db.user
+    <set >
+      <if test="loginName != null" >
+        login_name = #{loginName,jdbcType=VARCHAR},
+      </if>
+      <if test="loginPassword != null" >
+        login_password = #{loginPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null" >
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="role != null" >
+        role = #{role,jdbcType=BIGINT},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=BIGINT},
+      </if>
+      <if test="set != null" >
+        set = #{set,jdbcType=VARCHAR},
+      </if>
+      <if test="birthDate != null" >
+        birth_date = #{birthDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="valid != null" >
+        valid = #{valid,jdbcType=VARCHAR},
+      </if>
+      <if test="grade != null" >
+        grade = #{grade,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="marriage != null" >
+        marriage = #{marriage,jdbcType=VARCHAR},
+      </if>
+      <if test="nativePlace != null" >
+        native_place = #{nativePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null" >
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wind.user.dto.UserDTO" >
+    update user_db.user
+    set login_name = #{loginName,jdbcType=VARCHAR},
+      login_password = #{loginPassword,jdbcType=VARCHAR},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      role = #{role,jdbcType=BIGINT},
+      phone = #{phone,jdbcType=BIGINT},
+      set = #{set,jdbcType=VARCHAR},
+      birth_date = #{birthDate,jdbcType=TIMESTAMP},
+      valid = #{valid,jdbcType=VARCHAR},
+      grade = #{grade,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      marriage = #{marriage,jdbcType=VARCHAR},
+      native_place = #{nativePlace,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      update_date = #{updateDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

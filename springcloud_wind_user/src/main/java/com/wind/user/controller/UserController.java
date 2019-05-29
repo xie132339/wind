@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.wind.user.service.OrderRemote;
 
@@ -23,7 +24,7 @@ public class UserController {
      */
     @GetMapping("/getUserPort")
     public String getUserPort() {
-	return "user-service port：" + port;
+        return "user-service port：" + port;
     }
 
     /**
@@ -33,6 +34,12 @@ public class UserController {
      */
     @GetMapping("/getOrderPort")
     public String getOrderPort() {
-	return "user-order-service port：" + orderRemote.getOrderPort();
+        return "user-order-service port：" + orderRemote.getOrderPort();
+    }
+
+    @RequestMapping("/index")
+    public ModelAndView login() {
+        ModelAndView mv = new ModelAndView("index");
+        return mv;
     }
 }

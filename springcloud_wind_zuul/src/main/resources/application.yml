@@ -1,11 +1,19 @@
 spring:
-  application:
-    #当前应用名称
-    name: zuul-service
+   application:
+      #当前应用名称
+      name: zuul-service
+   #.html 文件配置
+   thymeleaf:
+      cache: false
+      prefix: classpath:/templates/
+      suffix: .html
+      encoding: UTF-8
+      content-type: text/html
+      mode: HTML5
    
 server:
    #当前服务端口号
-   port: 8919
+   port: 80
 eureka:
    instance:
       instance-id: ${spring.application.name}:${server.port}
@@ -25,9 +33,14 @@ hystrix:
             isolation: 
                thread: 
                   timeoutInMilliseconds: 60000
+                  
 ribbon:
-   ConnectTimeout: 3000
-   ReadTimeout: 60000
+   ConnectTimeout: 3000          #客户端等待与服务器建立连接的时间（以毫秒计）
+   ReadTimeout: 60000            #获取或设置读取操作未完成时发生超时之前的毫秒数。
+   MaxAutoRetries: 0             #在同一台服务器上重试的最大次数
+   MaxAutoRetriesNextServer: 1   #要重试的下一个服务器的最大数量
+   eureka:
+      enable: true
 
 zuul:
    ignoredServices: '*'
@@ -41,3 +54,6 @@ zuul:
       orders: 
          path: /myorders/**
          serviceId: order-service
+      back:
+         path: /back/**
+         serviceId: back-managerment

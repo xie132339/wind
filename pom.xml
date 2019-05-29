@@ -40,11 +40,6 @@
 
     <!--该元素描述了项目相关的所有依赖。 这些依赖组成了项目构建过程中的一个个环节。它们自动从项目定义的仓库中下载。 -->
     <dependencies>
-        <!-- spring-boot web模块 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
         <!-- 引入 spring-boot测试模块 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -195,5 +190,6 @@
         <module>springcloud_wind_config</module>
         <module>springcloud_wind_log</module>
         <module>springcloud_wind_schedule</module>
+        <module>springcloud_wind_front</module>
     </modules>
 </project>

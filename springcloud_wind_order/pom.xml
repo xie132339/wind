@@ -11,6 +11,11 @@
     <artifactId>springcloud_wind_order</artifactId>
     <name>springcloud_wind_order</name>
     <dependencies>
+        <!-- spring-boot web模块 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <!-- 注册中心 eureka client -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
