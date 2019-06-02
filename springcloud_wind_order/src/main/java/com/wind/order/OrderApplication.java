@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableCircuitBreaker
+@EnableCircuitBreaker //熔断
 @EnableFeignClients
 @EnableHystrix
 public class OrderApplication {

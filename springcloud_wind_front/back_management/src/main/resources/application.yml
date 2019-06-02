@@ -5,6 +5,9 @@ spring:
    application:
       #当前应用名称
       name: back-managerment
+   #国际化i18n
+   messages:
+      basename: i18n.messages,i18n.messages_user
    #.ftl 文件配置
    freemarker:
       allow-request-override: false

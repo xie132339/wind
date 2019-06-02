@@ -1,18 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<meta name="description" content="">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Admetro - Responsive Bootstrap 4 Admin Template</title>
-
-<link rel="icon" th:href="@{/images/bootstrap/core-img/favicon.ico}">
-
-<link rel="stylesheet" th:href="@{/style.css}">
+<html lang="zh_CN">
+<head th:replace="common/htmlHead_css :: common_header(~{::title},~{::link})">
+    <title>[[#{login}]]</title>
 </head>
-
 <body>
 	<!-- Preloader -->
 	<div id="preloader"></div>
@@ -57,10 +47,9 @@
 							</div>
 							<p class="text-center  font-size-12">[[#{noAccountYet}]]</p>
 							<a class="btn- btn-primary btn-1 btn-1a  w-100 text-center"
-								href="register.html">[[#{createAnAccount}]]</a> </br>
-							</br> 
-							<a th:href="@{/?lang=en_US}">English(US)</a> 
-							<a th:href="@{/?lang=zh_CN}">简体中文</a>
+								th:href="@{/register}">[[#{createAnAccount}]]</a> </br> </br> <a
+								th:href="@{/?lang=en_US}">English</a> <a
+								th:href="@{/?lang=zh_CN}">简体中文</a>
 						</form>
 					</div>
 				</div>
@@ -71,15 +60,12 @@
 	<!-- ======================================
     ********* Page Wrapper Area End ***********
     ======================================= -->
+    <!--使用公有js-->
+	<div th:replace="common/htmlFooter_js :: common_js(~{::script})">
+	    <!--每个页面自己的js-->
+	    <!-- <script src="js/index.js"></script> -->
+	</div>
 
-	<!-- Must needed plugins to the run this Template -->
-	<script th:src="@{/js/bootstrap/jquery.min.js}"></script>
-	<script th:src="@{/js/bootstrap/popper.min.js}"></script>
-	<script th:src="@{/js/bootstrap/bootstrap.min.js}"></script>
-	<script th:src="@{/js/bootstrap/admetro.bundle.js}"></script>
-
-	<!-- Active JS -->
-	<script th:src="@{/js/bootstrap/default-assets/active.js}"></script>
 </body>
 
 </html>

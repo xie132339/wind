@@ -24,16 +24,7 @@ eureka:
       serviceUrl:
          #注册中心的地址
          defaultZone: http://localhost:8761/eureka/
-
-# 上传大文件得将超时时间设置长一些，否则会报超时异常。
-hystrix: 
-   command: 
-      default: 
-         execution: 
-            isolation: 
-               thread: 
-                  timeoutInMilliseconds: 60000
-                  
+               
 ribbon:
    ConnectTimeout: 3000          #客户端等待与服务器建立连接的时间（以毫秒计）
    ReadTimeout: 60000            #获取或设置读取操作未完成时发生超时之前的毫秒数。
@@ -44,6 +35,10 @@ ribbon:
 
 zuul:
    ignoredServices: '*'
+   addHostHeader: true
+   host:
+      connect-timeout-millis: 3000
+      socket-timeout-millis: 3000
    routes:
       uploadfile: 
          path: /fileoperation/**
@@ -57,3 +52,13 @@ zuul:
       back:
          path: /back/**
          serviceId: back-managerment
+         sensitiveHeaders: Cookie,Set-Cookie,Authorization
+
+# 上传大文件得将超时时间设置长一些，否则会报超时异常。
+hystrix: 
+   command: 
+      default: 
+         execution: 
+            isolation: 
+               thread: 
+                  timeoutInMilliseconds: 60000
