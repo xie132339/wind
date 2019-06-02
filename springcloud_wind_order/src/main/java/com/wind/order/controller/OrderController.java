@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.wind.log.dto.ShowLog;
+import com.wind.log.facade.LogFacade;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -33,6 +35,16 @@ public class OrderController {
     @Value("${test:config server not found}")
     private String ifs;
 
+    /*@Autowired
+    private LogFacade logFacade;
+    
+    @GetMapping("/insert")
+    public String insert() {
+        ShowLog log = new ShowLog();
+        log.setConten("SS");
+        logFacade.insert(log);
+        return "s";
+    }*/
     /**
      * 获取服务端口号
      * 
@@ -40,10 +52,9 @@ public class OrderController {
      */
     @GetMapping("/getOrderPort")
     @ApiOperation(value = "订单测试")
-    @HystrixCommand(fallbackMethod = "hiError")
+    //@HystrixCommand(fallbackMethod = "hiError")
     public String getOrderPort() {
-        log.debug("测试 id: {} and port: {}", port, info);
-        int a = 2 / 0;
+        //log.debug("测试 id: {} and port: {}", port, info);
         return "order-service port：" + port + "--" + info + "ifs" + ifs;
     }
 

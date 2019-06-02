@@ -13,11 +13,11 @@ public class HelloService {
 
     @HystrixCommand(fallbackMethod = "helloError")
     public String helloService() {
-	return restTemplate.getForEntity("http://user-service/helloasfasf", String.class).getBody();
+        return restTemplate.getForEntity("http://user-service/hello", String.class).getBody();
     }
 
     public String helloError() {
-	return "hello error";
+        return "hello error";
     }
 
 }

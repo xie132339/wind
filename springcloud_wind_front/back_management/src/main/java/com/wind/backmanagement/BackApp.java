@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Configuration;
 @SpringBootApplication
 @EnableDiscoveryClient
 @Configuration
-public class App {
+public class BackApp {
     public static void main(String[] args) {
-        SpringApplication.run(App.class, args);
+        SpringApplication.run(BackApp.class, args);
     }
 }
