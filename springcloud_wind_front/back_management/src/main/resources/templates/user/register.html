@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head
+	th:replace="common/htmlHead_css :: common_header(~{::title},~{::link})">
+<title>[[#{signup}]]</title>
+</head>
+
+<body>
+	<!-- Preloader -->
+	<div id="preloader"></div>
+
+	<!-- ======================================
+    ******* Main Wrapper Area Start **********
+    ======================================= -->
+	<div class="main-content- h-100vh">
+		<!-- Clipboard area Start -->
+		<div class="container h-100">
+			<div class="row h-100 justify-content-center align-items-center">
+				<div class="col-lg-6 mx-auto">
+					<!-- Middle Box -->
+					<div
+						class="middle-box my-5 text-center bg-white p-4 p-sm-5 bg-boxshadow">
+						<h5 class="mb-50">[[#{registerNow}]]</h5>
+						<!-- Form -->
+						<form class="register-form" action="login.html">
+							<!-- Form Group -->
+							<div class="form-group">
+								<input type="text" class="form-control register"
+									th:placeholder="#{user.userName}" required="">
+							</div>
+							<!-- Form Group -->
+							<div class="form-group">
+								<input type="email" class="form-control register"
+									th:placeholder="#{email}" required="">
+							</div>
+							<!-- Form Group -->
+							<div class="form-group">
+								<input type="password" class="form-control register"
+									th:placeholder="#{user.password}" required="">
+							</div>
+							<label class="ckbox mb-20"> <input type="checkbox">
+								<span></span><small class="text-color-gray">[[#{articlesGgreement}]]</small>
+							</label>
+							<button type="submit"
+								class="btn- btn-success btn-1 btn-1c w-100 text-center">[[#{login}]]</button>
+							<p class="text-center mt-15">[[#{alreadyHaveAccount}]]</p>
+							<a class="btn- btn-primary btn-1 btn-1a  w-100 text-center"
+								href="login.html">[[#{signup}]]</a>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ====== Page Content Area End ====== -->
+
+	<!-- ======================================
+    ********* Page Wrapper Area End ***********
+    ======================================= -->
+
+	<!--使用公有js-->
+	<div th:replace="common/htmlFooter_js :: common_js(~{::script})">
+		<!--每个页面自己的js-->
+		<!-- <script src="js/index.js"></script> -->
+	</div>
+
+</body>
+
+</html>
