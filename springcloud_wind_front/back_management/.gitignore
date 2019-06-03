@@ -1,11 +1,7 @@
-<<<<<<< HEAD
 /target/
-=======
-/target
-/target/*
 /.class
 /.classpath
 /.gitignore
 /.settings
 /.project
->>>>>>> branch 'master' of https://gitee.com/wind77/springcloud_wind_parent.git
+
