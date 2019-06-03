@@ -1,13 +1,11 @@
-package com.wind.user.dto;
+package com.wind.user.po;
 
 import java.util.Date;
 
 import lombok.Data;
-import lombok.ToString;
 
 @Data
-@ToString
-public class UserDTO {
+public class User {
     private Long id;
 
     private String loginName;
@@ -20,7 +18,7 @@ public class UserDTO {
 
     private Long phone;
 
-    private String sex;
+    private String set;
 
     private Date birthDate;
 
@@ -35,7 +33,6 @@ public class UserDTO {
     private String nativePlace;
 
     private Date createDate;
-
+    
     private Date updateDate;
-
 }
