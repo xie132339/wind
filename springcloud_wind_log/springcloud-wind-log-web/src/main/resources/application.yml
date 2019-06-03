@@ -69,7 +69,9 @@ eureka:
       preferIpAddress: true                       # 设置微服务调用地址为IP优先（缺省为false）
       leaseRenewalIntervalInSeconds: 5          # 心跳时间，即服务续约间隔时间（缺省为30s）
       leaseExpirationDurationInSeconds: 15      # 发呆时间，即服务续约到期时间（缺省为90s）
+      prefer-ip-address: true #标识将自己IP注册到Eureka Server。不配置此属性默认False，则表示注册微服务所在操作系统的hostname到Eureka Server
    client:
       serviceUrl:
          #注册中心的地址
-         defaultZone: http://localhost:8761/eureka/
+         defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/
+         

@@ -7,7 +7,7 @@
 		<artifactId>springcloud_wind_parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>springcloud_wind_eureka</artifactId>
+	<artifactId>microservice-discovery-eureka</artifactId>
 	<name>springcloud_wind_eureka</name>
 	<description>eureka 服务注册中心</description>
 	<dependencies>
