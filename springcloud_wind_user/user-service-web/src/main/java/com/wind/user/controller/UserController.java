@@ -20,7 +20,10 @@ public class UserController {
 
     @Value("${server.port}")
     String port;
-
+    
+    @Value("${from}")
+    String from;
+    
     @RequestMapping("/getUser")
     public String getUser(@RequestParam("id") Long id) {
         UserDTO u = userService.getUser(id);
@@ -35,7 +38,7 @@ public class UserController {
      */
     @GetMapping("/getUserPort")
     public String getUserPort() {
-        return "user-service port：" + port;
+        return "user-service port：" + port +"=" + from;
     }
 
     /**

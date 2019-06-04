@@ -2,8 +2,8 @@ spring:
    application:
     #当前应用名称
       name: config-service
-   profiles:
-      active: native #设置为本地启动的方式，而不是通过git
+   #profiles:
+   #   active: native #设置为本地启动的方式，而不是通过git
    cloud:
       config:
          server:
@@ -17,7 +17,7 @@ spring:
             
 server:
   #当前服务端口号
-   port: 7777
+   port: 7001
    
 eureka:
    instance:
@@ -29,3 +29,8 @@ eureka:
       serviceUrl:
          #注册中心的地址
          defaultZone: http://localhost:8761/eureka/
+
+security:
+   user:
+      name: admin
+      password: admin
