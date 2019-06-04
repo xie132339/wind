@@ -12,9 +12,9 @@ import com.wind.user.dto.UserDTO;
 public class UserController {
     @Autowired
     private UserService userService;
-
+    
     @RequestMapping("/getUser")
-    public String getUser(@RequestParam("id") Long id) {
+    public String getUser(@RequestParam("id") Long id) throws Exception {
         UserDTO u = userService.getUser(id);
         return u.toString();
     }

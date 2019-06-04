@@ -7,8 +7,13 @@ spring:
    cloud:
       config:
          server:
-            native:
-               searchLocations: classpath:/config   # 配置文件所在目录，classpath（类路径）和（系统文件路径） file两种  
+            git:
+               uri: https://gitee.com/wind77/springcloud_wind_parent
+               searchPaths: /config-repo
+               username: zhumuqxie@163.com
+               password: xie132339
+            #native:
+            #   searchLocations: classpath:/config   # 配置文件所在目录，classpath（类路径）和（系统文件路径） file两种  
             
 server:
   #当前服务端口号

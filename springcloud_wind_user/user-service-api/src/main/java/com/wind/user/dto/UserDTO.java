@@ -3,11 +3,14 @@ package com.wind.user.dto;
 import java.util.Date;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Data
 @ToString
+@NoArgsConstructor
 public class UserDTO {
+
     private Long id;
 
     private String loginName;
@@ -37,5 +40,9 @@ public class UserDTO {
     private Date createDate;
 
     private Date updateDate;
+
+    public UserDTO(String nickname) {
+        this.nickname = nickname;
+    }
 
 }

@@ -74,4 +74,21 @@ eureka:
       serviceUrl:
          #注册中心的地址
          defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/
+
+user-service:
+   ribbon:
+      ConnectTimeout: 500 #请求连接的超时时间
+      ReadTimeout: 200 # 请求处理的超时时间 
+      OkToRetryOnAllOperations: true #是否可以对所有操作都进行重试
+      MaxAutoRetriesNextServer: 2 #切换实例的重试次数
+      MaxAutoRetries: 1 #对当前实例的重试次数
+
+hystrix:
+   command:
+      user-service:
+         execution:
+            isolation:
+               thread:
+                  timeoutInMilliseconds: 5000
+      
          

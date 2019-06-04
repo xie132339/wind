@@ -7,5 +7,5 @@ import com.wind.user.dto.UserDTO;
 
 public interface UserFacade {
     @RequestMapping("/getUser")
-    UserDTO getUser(@RequestParam("id") Long id);
+    UserDTO getUser(@RequestParam("id") Long id) throws Exception;
 }
