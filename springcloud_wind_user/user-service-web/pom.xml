@@ -58,6 +58,22 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
+        <!-- 络抖动等原因导致config-client在启动时候访问config-server没有访问成功从而报错，这显然是不划算的，
+                                          遇到这种情况我们希望config-client最好能重试几次，重试机制在这里也是受支持的，添加重试机制的方式很简单，引入如下两个依赖：
+             spring-retry、spring-boot-starter-aop -->
+        <dependency>
+            <groupId>org.springframework.retry</groupId>
+            <artifactId>spring-retry</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <!-- 服务监控与管理 动态刷新配置 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

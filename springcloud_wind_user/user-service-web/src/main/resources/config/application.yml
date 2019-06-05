@@ -58,17 +58,6 @@ pagehelper:                       #pagehelper分页插件
    supportMethodsArguments: true
    params: count=countSql
 
-eureka:
-   instance:
-      instance-id: ${spring.application.name}:${server.port}
-      preferIpAddress: true                       # 设置微服务调用地址为IP优先（缺省为false）
-      leaseRenewalIntervalInSeconds: 5          # 心跳时间，即服务续约间隔时间（缺省为30s）
-      leaseExpirationDurationInSeconds: 15      # 发呆时间，即服务续约到期时间（缺省为90s）
-   client:
-      serviceUrl:
-         #注册中心的地址
-         defaultZone: http://localhost:8761/eureka/
-            
 feign:
    hystrix:
       enabled: true

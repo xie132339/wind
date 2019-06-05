@@ -1,7 +1,11 @@
+server:
+  #当前服务端口号
+   port: 7001
+   
 spring:
    application:
     #当前应用名称
-      name: config-service
+      name: config-server
    #profiles:
    #   active: native #设置为本地启动的方式，而不是通过git
    cloud:
@@ -10,15 +14,16 @@ spring:
             git:
                uri: https://gitee.com/wind77/springcloud_wind_parent
                searchPaths: /config-repo
-               username: zhumuqxie@163.com
-               password: xie132339
+               #username: 
+               #password: 
             #native:
             #   searchLocations: classpath:/config   # 配置文件所在目录，classpath（类路径）和（系统文件路径） file两种  
+   #安全配置 访问页面需要登录
+   security:
+      user:
+         name: user
+         password: ffe93aa1-e9d0-4193-ac2a-54d9fe7fdd17
             
-server:
-  #当前服务端口号
-   port: 7001
-   
 eureka:
    instance:
       instance-id: ${spring.application.name}:${server.port}
@@ -29,8 +34,3 @@ eureka:
       serviceUrl:
          #注册中心的地址
          defaultZone: http://localhost:8761/eureka/
-
-security:
-   user:
-      name: admin
-      password: admin
