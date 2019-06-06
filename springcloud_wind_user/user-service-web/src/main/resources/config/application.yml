@@ -46,6 +46,10 @@ spring:
             login-username: admin
             # 登录密码
             login-password: 123456
+   rabbitmq:
+      host: localhost
+      username: xdf
+      password: xdf
 mybatis:
    config-location: classpath:mybatis/mybatis-config.xml    #  mybatis主配置文件所在路径
    type-aliases-package: com.wind.user                    #  定义所有操作类的别名所在包
@@ -61,4 +65,3 @@ pagehelper:                       #pagehelper分页插件
 feign:
    hystrix:
       enabled: true
-      
