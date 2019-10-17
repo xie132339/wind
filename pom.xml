@@ -177,7 +177,7 @@
         <module>wind-zuul</module>
         <module>wind-fileoperation</module>
         <module>wind-order</module>
-        <module>wind-queen_ant</module>
+        <module>wind-queen-ant</module>
         <module>wind-rabbitmq</module>
         <module>wind-redis</module>
         <module>wind-po</module>
