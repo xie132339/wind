@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>springcloud_wind</groupId>
-		<artifactId>springcloud_wind_parent</artifactId>
+		<groupId>wind</groupId>
+		<artifactId>wind</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>springcloud_wind_hystrix</groupId>
-	<artifactId>springcloud_wind_hystrix</artifactId>
-	<name>springcloud_wind_hystrix</name>
+	<groupId>wind-hystrix</groupId>
+	<artifactId>wind-hystrix</artifactId>
+	<name>wind-hystrix</name>
 	<description>hystrix 熔断机制</description>
 	<dependencies>
 		<!-- 仪表 可视化界面管理 -->

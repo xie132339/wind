@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>springcloud_wind</groupId>
-		<artifactId>springcloud_wind_parent</artifactId>
+		<groupId>wind</groupId>
+		<artifactId>wind</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>microservice-discovery-eureka</artifactId>
-	<name>springcloud_wind_eureka</name>
+	<name>wind-eureka</name>
 	<description>eureka 服务注册中心</description>
 	<dependencies>
 		<dependency>
@@ -18,7 +18,7 @@
 	</dependencies>
 	<!-- 构建项目 -->
 	<build>
-		<finalName>springcloud-wind-eureka</finalName>
+		<finalName>wind-eureka</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -48,7 +48,9 @@
 			</plugin>
 		</plugins>
 
-		<resources>
+        
+        <!-- 不加载properties文件 -->
+		<!-- <resources>
 			<resource>
 				<directory>src/main/resources</directory>
 				<excludes>
@@ -61,7 +63,7 @@
 					<exclude>**/*.java</exclude>
 				</excludes>
 			</resource>
-		</resources>
+		</resources> -->
 	</build>
 
 

@@ -3,16 +3,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>springcloud_wind</groupId>
-        <artifactId>springcloud_wind_parent</artifactId>
+        <groupId>wind</groupId>
+        <artifactId>wind</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>springcloud_wind</groupId>
-    <artifactId>springcloud_wind_comm</artifactId>
-    <name>springcloud_wind_comm</name>
+    <groupId>wind</groupId>
+    <artifactId>wind-comm</artifactId>
+    <name>wind-comm</name>
     <description>通用包</description>
     <build>
-        <finalName>springcloud-wind-comm</finalName>
+        <finalName>wind-comm</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

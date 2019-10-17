@@ -4,11 +4,11 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>springcloud_wind_log</groupId>
-        <artifactId>springcloud_wind_log</artifactId>
+        <groupId>wind-log</groupId>
+        <artifactId>wind-log</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>springcloud-wind-log-web</artifactId>
+    <artifactId>wind-log-web</artifactId>
     <dependencies>
         <!-- 注册中心 eureka client -->
         <dependency>
@@ -39,10 +39,9 @@
             <version>1.2.3</version>
         </dependency>
         <dependency>
-            <groupId>springcloud-wind-log-api</groupId>
-            <artifactId>springcloud-wind-log-api</artifactId>
+            <groupId>wind-log</groupId>
+            <artifactId>wind-log-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -50,7 +49,7 @@
         </dependency>
         <!-- 引用user-api -->
         <dependency>
-            <groupId>springcloud_wind_user</groupId>
+            <groupId>wind-user</groupId>
             <artifactId>user-service-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

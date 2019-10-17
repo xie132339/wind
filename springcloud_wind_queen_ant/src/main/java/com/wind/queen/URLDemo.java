@@ -1,4 +1,4 @@
-package com.wind.queenant.demo;
+package com.wind.queen;
 
 import java.io.BufferedReader;
 import java.io.File;

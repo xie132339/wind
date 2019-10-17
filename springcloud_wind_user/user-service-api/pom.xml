@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>user-service-api</artifactId>
     <parent>
-        <groupId>springcloud_wind_user</groupId>
-        <artifactId>springcloud_wind_user</artifactId>
+        <groupId>wind-user</groupId>
+        <artifactId>wind-user</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     

@@ -3,18 +3,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>springcloud_wind</groupId>
-		<artifactId>springcloud_wind_parent</artifactId>
+		<groupId>wind</groupId>
+		<artifactId>wind</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>springcloud_wind_queen_ant</groupId>
-	<artifactId>springcloud_wind_queen_ant</artifactId>
-	<name>springcloud_wind_queen_ant</name>
+	<groupId>wind-queen-ant</groupId>
+	<artifactId>wind-queen-ant</artifactId>
+	<name>wind-queen-ant</name>
 	<description>蚁后 每一行代码都是 蚁兵</description>
 
 	<!-- 构建项目 -->
 	<build>
-		<finalName>springcloud-wind-queen_ant</finalName>
+		<finalName>wind-queen-ant</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

@@ -3,13 +3,13 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>springcloud_wind</groupId>
-        <artifactId>springcloud_wind_parent</artifactId>
+        <groupId>wind</groupId>
+        <artifactId>wind</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>springcloud_wind_order</groupId>
-    <artifactId>springcloud_wind_order</artifactId>
-    <name>springcloud_wind_order</name>
+    <groupId>wind-order</groupId>
+    <artifactId>wind-order</artifactId>
+    <name>wind-order</name>
     <dependencies>
         <!-- spring-boot web模块 -->
         <dependency>
@@ -51,10 +51,9 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         <dependency>
-            <groupId>springcloud-wind-log-api</groupId>
-            <artifactId>springcloud-wind-log-api</artifactId>
+            <groupId>wind-log</groupId>
+            <artifactId>wind-log-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -81,18 +80,6 @@
                 </configuration>
             </plugin>
         </plugins>
-        <resources>
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.xml</include>
-                </includes>
-                <filtering>false</filtering>
-            </resource>
-            <resource>
-                <directory>src/main/resources</directory>
-            </resource>
-        </resources>
     </build>
 
 </project>

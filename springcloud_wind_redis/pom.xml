@@ -4,13 +4,13 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>springcloud_wind</groupId>
-        <artifactId>springcloud_wind_parent</artifactId>
+        <groupId>wind</groupId>
+        <artifactId>wind</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>springcloud_wind_redis</groupId>
-    <artifactId>springcloud_wind_redis</artifactId>
-    <name>springcloud_wind_redis</name>
+    <groupId>wind-redis</groupId>
+    <artifactId>wind-redis</artifactId>
+    <name>wind-redis</name>
     <description>springboot redis</description>
 
     <dependencies>

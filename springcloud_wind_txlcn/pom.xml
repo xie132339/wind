@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>springcloud_wind</groupId>
-		<artifactId>springcloud_wind_parent</artifactId>
+		<groupId>wind</groupId>
+		<artifactId>wind</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>springcloud_wind</groupId>
-	<artifactId>springcloud_wind_txmanager</artifactId>
-	<name>springcloud_wind_txmanager</name>
+	<groupId>wind</groupId>
+	<artifactId>wind-txmanager</artifactId>
+	<name>wind-txmanager</name>
 	<description>lcn分布式事务我不生产事务我是事务的协调者</description>
 	<dependencies>
 		<!-- lcn分布式事务协调者 -->

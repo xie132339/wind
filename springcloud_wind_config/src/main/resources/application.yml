@@ -12,7 +12,7 @@ spring:
       config:
          server:
             git:
-               uri: https://gitee.com/wind77/springcloud_wind_parent
+               uri: https://gitee.com/wind77/wind
                searchPaths: /config-repo
                #username: 
                #password: 

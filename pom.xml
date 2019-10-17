@@ -6,15 +6,15 @@
     <!--声明项目描述符遵循哪一个POM模型版本。模型本身的版本很少改变，虽然如此，但它仍然是必不可少的，这是为了当Maven引入了新的特性或者其他模型变更的时候，确保稳定性。 -->
     <modelVersion>4.0.0</modelVersion>
     <!--被继承的父项目的全球唯一标识符 -->
-    <groupId>springcloud_wind</groupId>
+    <groupId>wind</groupId>
     <!--被继承的父项目的构件标识符 -->
-    <artifactId>springcloud_wind_parent</artifactId>
+    <artifactId>wind</artifactId>
     <!--被继承的父项目的版本 -->
     <version>0.0.1-SNAPSHOT</version>
     <!--项目产生的构件类型，例如jar、war、ear、pom。插件可以创建他们自己的构件类型，所以前面列的不是全部构件类型 -->
     <packaging>pom</packaging>
     <!--项目的名称, Maven产生的文档用 -->
-    <name>springcloud_wind_parent</name>
+    <name>wind</name>
     <!-- 项目的详细描述, Maven 产生的文档用。 当这个元素能够用HTML格式描述时（例如，CDATA中的文本会被解析器忽略，就可以包含HTML标 
         签）， 不鼓励使用纯文本描述。如果你需要修改产生的web站点的索引页面，你应该修改你自己的索引页文件，而不是调整这里的文档。 -->
     <description>spring_cloud Finchley.M9 pom</description>
@@ -170,22 +170,22 @@
     </repositories>
     <!--模块（有时称作子项目） 被构建成项目的一部分。列出的每个模块元素是指向该模块的目录的相对路径 -->
     <modules>
-        <module>springcloud_wind_eureka</module>
-        <module>springcloud_wind_comm</module>
-        <module>springcloud_wind_user</module>
-        <module>springcloud_wind_hystrix</module>
-        <module>springcloud_wind_zuul</module>
-        <module>springcloud_wind_fileoperation</module>
-        <module>springcloud_wind_order</module>
-        <module>springcloud_wind_queen_ant</module>
-        <module>springcloud_wind_rabbitmq</module>
-        <module>springcloud_wind_redis</module>
-        <module>springcloud_wind_po</module>
-        <module>springcloud_wind_txlcn</module>
-        <module>springcloud_wind_configserver</module>
-        <module>springcloud_wind_config</module>
-        <module>springcloud_wind_log</module>
-        <module>springcloud_wind_schedule</module>
-        <module>springcloud_wind_front</module>
+        <module>wind-eureka</module>
+        <module>wind-comm</module>
+        <module>wind-user</module>
+        <module>wind-hystrix</module>
+        <module>wind-zuul</module>
+        <module>wind-fileoperation</module>
+        <module>wind-order</module>
+        <module>wind-queen_ant</module>
+        <module>wind-rabbitmq</module>
+        <module>wind-redis</module>
+        <module>wind-po</module>
+        <module>wind-txlcn</module>
+        <module>wind-configserver</module>
+        <module>wind-config</module>
+        <module>wind-log</module>
+        <module>wind-schedule</module>
+        <module>wind-front</module>
     </modules>
 </project>
