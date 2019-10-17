@@ -8,7 +8,7 @@
         <artifactId>wind-front</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>back_management</artifactId>
+    <artifactId>back-management</artifactId>
     <dependencies>
         <!-- 注册中心 eureka client -->
         <dependency>
