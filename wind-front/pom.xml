@@ -9,6 +9,6 @@
   <artifactId>wind-front</artifactId>
   <packaging>pom</packaging>
   <modules>
-      <module>back_management</module>
+      <module>back-management</module>
   </modules>
 </project>

@@ -7,7 +7,6 @@
         <artifactId>wind</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>wind</groupId>
     <artifactId>wind-comm</artifactId>
     <name>wind-comm</name>
     <description>通用包</description>
@@ -17,6 +16,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <!--在构建生命周期中执行一组目标的配置。每个目标可能有不同的配置。-->  
                 <executions>
                     <execution>
                         <goals>
