@@ -64,70 +64,6 @@ public class DateUtils {
         weekDays.put("sunday", "星期日");
     }
 
-    public static Date parseCnDate(String sDate) {
-        return parseDate(sDate, YYYY_NIAN_MM_YUE_DD_RI);
-    }
-
-    public static Date parseDate(String sDate) {
-        return parseDate(sDate, YYYY_MM_DD);
-    }
-
-    public static Date parseDate4Xls(String sDate) {
-        return parseDate(sDate, YYYY__MM__DD);
-    }
-
-    public static Date parseCnHmDate(String sDate) {
-        return parseDate(sDate, YYYY_MM_DD_HH_MM_SS);
-    }
-
-    public static Date parseHhDate(String sDate) {
-        return parseDate(sDate, YYYY_MM_DD_HH);
-    }
-
-    public static String formatDateByFormat(Date sDate, String Format) {
-        return formatDate(sDate, Format);
-    }
-
-    public static String formatDateYYYYMMDD(Date sDate) {
-        return formatDate(sDate, YYYYMMDD);
-    }
-
-    public static String formatDate(Date sDate) {
-        return formatDate(sDate, YYYY_MM_DD);
-    }
-
-    public static String formatTime(Date sDate) {
-        return formatDate(sDate, HH_mm_ss);
-    }
-
-    public static String formatTimeMillisecond(Date sDate) {
-        return formatDate(sDate, HH_mm_ss_SSS);
-    }
-
-    public static String formatCnDate(Date sDate) {
-        return formatDate(sDate, YYYY_NIAN_MM_YUE_DD_RI);
-    }
-
-    public static String formatCnHmDate(Date sDate) {
-        return formatDate(sDate, YYYY_MM_DD_HH_MM_SS);
-    }
-
-    public static String formatHhMmDate(Date sDate) {
-        return formatDate(sDate, YYYY_MM_DD_HH_MM);
-    }
-
-    public static String formatHhDate(Date sDate) {
-        return formatDate(sDate, YYYY_MM_DD_HH);
-    }
-
-    public static String formatCnHmDateS(Date sDate) {
-        return formatDate(sDate, YYYY_MM_DD_HH_MM_SSSSS);
-    }
-
-    public static String formatHmDate(Date sDate) {
-        return formatDate(sDate, HH_mm);
-    }
-
     /**
      * String换成Date类型
      *
@@ -181,112 +117,89 @@ public class DateUtils {
         return "";
     }
 
-    public static String defaultFormatDate(Date sDate) {
-        return formatDate(sDate, YYYY_MM_DD_HH_MM_SS);
-    }
-
+    /**
+     * 判断是否是日期数据
+     * @param dateStr "2019-10-32" or "2019/10/32"
+     * @param pattern 日期格式 yyyy-MM-dd 要与 dateStr格式一致
+     * @return boolean
+     */
     public static boolean isValidDate(String dateStr, String pattern) {
         return formatDate(parseDate(dateStr, pattern), pattern).equals(dateStr);
     }
 
+    /**
+     * 当前日期增加分钟
+     * @param date 日期
+     * @param amount 增加多少分钟 例子：20
+     * @return
+     */
     public static Date addMinutes(Date date, int amount) {
         return add(date, Calendar.MINUTE, amount);
     }
 
-    public static String formatDateHour(Date sDate) {
-        return formatDate(sDate, YYYY_MM_DD_HH_MM);
-    }
-
+    /**
+     * 当前日期增加小时
+     * @param date 日期
+     * @param amount 增加多少小时 例子：20
+     * @return
+     */
     public static Date addHours(Date date, int amount) {
         return add(date, Calendar.HOUR_OF_DAY, amount);
     }
 
+    /**
+     * 当前日期增加天数
+     * @param date 日期
+     * @param amount 增加多少小时 例子：20
+     * @return
+     */
     public static Date addDays(Date date, int amount) {
         return add(date, Calendar.DAY_OF_MONTH, amount);
     }
 
     /**
-     * Calendar 的“年、月、日、星期、时、分、秒”这些信息，一共是17个字段。
-     * 我们使用Calendar，无非是就是使用这17个字段。它们的定义如下：
-     * (字段0) public final static int ERA = 0;
-     * 说明：纪元。
-     * 取值：只能为0 或 1。0表示BC(“before Christ”,即公元前)，1表示AD(拉丁语“Anno Domini”,即公元)。
-     * <p>
-     * (字段1) public final static int YEAR = 1;
-     * 说明：年。
-     * <p>
-     * (字段2) public final static int MONTH = 2;
-     * 说明：月
-     * 取值：可以为，JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER, UNDECIMBER。
-     * 其中第一个月是 JANUARY，它为 0。
-     * <p>
-     * (字段3) public final static int WEEK_OF_YEAR = 3;
-     * (字段4) public final static int WEEK_OF_MONTH = 4;
-     * 说明：当前日期在本月中对应第几个星期。一个月中第一个星期的值为 1。
-     * <p>
-     * (字段5) public final static int DATE = 5;
-     * 说明：日。一个月中第一天的值为 1。
-     * <p>
-     * (字段5) public final static int DAY_OF_MONTH = 5;
-     * 说明：同“DATE”，表示“日”。
-     * <p>
-     * (字段6) public final static int DAY_OF_YEAR = 6;
-     * 说明：当前日期在本年中对应第几天。一年中第一天的值为 1。
-     * <p>
-     * (字段7) public final static int DAY_OF_WEEK = 7;
-     * 说明：星期几。
-     * 取值：可以为，SUNDAY、MONDAY、TUESDAY、WEDNESDAY、THURSDAY、FRIDAY 和 SATURDAY。
-     * 其中，SUNDAY为1，MONDAY为2，依次类推。
-     * <p>
-     * (字段8) public final static int DAY_OF_WEEK_IN_MONTH = 8;
-     * 说明：当前月中的第几个星期。
-     * <p>
-     * (字段9) public final static int AM_PM = 9;
-     * 说明：上午 还是 下午
-     * 取值：可以是AM 或 PM。AM为0,表示上午；PM为1,表示下午。
-     * <p>
-     * (字段10) public final static int HOUR = 10;
-     * 说明：指示一天中的第几小时。
-     * HOUR 用于 12 小时制时钟 (0 - 11)。中午和午夜用 0 表示，不用 12 表示。
-     * <p>
-     * (字段11) public final static int HOUR_OF_DAY = 11;
-     * 说明：指示一天中的第几小时。
-     * HOUR_OF_DAY 用于 24 小时制时钟。例如，在 10:04:15.250 PM 这一时刻，HOUR_OF_DAY 为 22。
-     * <p>
-     * (字段12) public final static int MINUTE = 12;
-     * 说明：一小时中的第几分钟。
-     * 例如，在 10:04:15.250 PM这一时刻，MINUTE 为 4。
-     * <p>
-     * (字段13) public final static int SECOND = 13;
-     * 说明：一分钟中的第几秒。
-     * 例如，在 10:04:15.250 PM 这一时刻，SECOND 为 15。
-     * <p>
-     * (字段14) public final static int MILLISECOND = 14;
-     * 说明：一秒中的第几毫秒。
-     * 例如，在 10:04:15.250 PM 这一时刻，MILLISECOND 为 250。
-     * <p>
-     * (字段15) public final static int ZONE_OFFSET = 15;
-     * 说明：毫秒为单位指示距 GMT 的大致偏移量。
-     * <p>
-     * (字段16) public final static int DST_OFFSET = 16;
-     * 说明：毫秒为单位指示夏令时的偏移量。
-     * <p>
-     * public final static int FIELD_COUNT = 17;
-     * 这17个字段是保存在int数组中。定义如下：
-     *
-     * @param date
-     * @param calendarField
-     * @param amount
-     * @return
+     * 
+     * @param date 时间
+     * @param calendarField 格式： 年（ Calendar.YEAR）、月（Calendar.MONTH）、日（Calendar.DATE）、
+     * 时（24小时制：Calendar.HOUR_OF_DAY、12小时制：Calendar.HOUR）、分（Calendar.MINUTE）、秒（Calendar.SECOND）
+     * 传入    Calendar.YEAR   则需要增加多少年
+     * @param amount 新增的数据 如： 2
+     * @return Date
      */
-    public static Date add(Date date, int calendarField, int amount) {
+    public static Date add(Date date, int calendarField, Integer amount) {
         if (date == null) {
             throw new IllegalArgumentException("The date must not be null");
+        }
+        if (amount == null) {
+            throw new IllegalArgumentException("The amount must not be null");
         }
         Calendar c = Calendar.getInstance();
         c.setTime(date);
         c.add(calendarField, amount);
         return c.getTime();
+    }
+    
+    /**
+     * 
+     * @param date 时间
+     * @param calendarField 格式： 年（ Calendar.YEAR）、月（Calendar.MONTH）、日（Calendar.DATE）、
+     * 时（24小时制：Calendar.HOUR_OF_DAY、12小时制：Calendar.HOUR）、分（Calendar.MINUTE）、秒（Calendar.SECOND）
+     * 传入    Calendar.YEAR   则需要减加多少年
+     * @param amount
+     * @return
+     */
+    public static Date subtract(Date date, int calendarField, Integer amount) {
+        if (date == null) {
+            throw new IllegalArgumentException("The date must not be null");
+        }
+        if (amount == null) {
+            throw new IllegalArgumentException("The amount must not be null");
+        }
+        Calendar c = Calendar.getInstance();
+        c.setTime(date);
+        c.add(calendarField, - amount);
+        return c.getTime();
+        
     }
 
     /**
@@ -311,6 +224,10 @@ public class DateUtils {
     }
 
     public static void main(String[] args) {
+        
+        String timeStr = DateUtils.formatDate(DateUtils.subtract(new Date(), Calendar.MINUTE, 2), DateUtils.YYYY_MM_DD_HH_MM_SS);
+        System.out.println(timeStr); 
+        System.out.println(DateUtils.isValidDate("2019-10-32", DateUtils.YYYY_MM_DD));
 
         String date2 = "Mon Oct 28 00:00:00 CST 2019";
         String date1 = "Sun Apr 28 00:00:00 CST 2019";
