@@ -1,0 +1,175 @@
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>wind</groupId>
+        <artifactId>wind</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <groupId>wind-service</groupId>
+    <artifactId>wind-service</artifactId>
+    <packaging>pom</packaging>
+
+    <!-- 项目的详细描述, Maven 产生的文档用。 当这个元素能够用HTML格式描述时（例如，CDATA中的文本会被解析器忽略，就可以包含HTML标 
+        签）， 不鼓励使用纯文本描述。如果你需要修改产生的web站点的索引页面，你应该修改你自己的索引页文件，而不是调整这里的文档。 -->
+    <description>spring_cloud Finchley.M9 pom</description>
+    <!--父项目的坐标。如果项目中没有规定某个元素的值，那么父项目中的对应值即为项目的默认值。 坐标包括group ID，artifact 
+        ID和 version。 -->
+
+    <!-- <properties>元素用户可以自定义一个或多个Maven属性，然后在POM的其他地方使用${属性名}的方式引用该属性，这种做法的最大意义在于消除重复和统一管理。 -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Finchley.M9</spring-cloud.version>
+        <springfox-swagger2.version>2.8.0</springfox-swagger2.version>
+    </properties>
+
+    <!--该元素描述了项目相关的所有依赖。 这些依赖组成了项目构建过程中的一个个环节。它们自动从项目定义的仓库中下载。 -->
+    <dependencies>
+        <!-- 引入 spring-boot测试模块 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- 自动生成API文档 Swagger 是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 
+            服务。 主要为前端测试提供模拟数据，更好地帮助前后端分离，同步开发，也可用于微服务间调用的模拟数据 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox-swagger2.version}</version>
+            <!--依赖范围。在项目发布过程中，帮助决定哪些构件被包括进来。欲知详情请参考依赖机制。 - compile ：默认范围，用于编译 
+                - provided：类似于编译，但支持你期待jdk或者容器提供，类似于classpath - runtime: 在执行时需要使用 - test: 
+                用于test任务时使用 - system: 需要外在提供相应的元素。通过systemPath来取得 - systemPath: 仅用于范围为system。提供相应的路径 
+                - optional: 当项目自身被依赖时，标注依赖是否传递。用于连续依赖时使用 -->
+            <scope>provided</scope>
+        </dependency>
+        <!--swagger2-ui依赖 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${springfox-swagger2.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- 热部署 -->
+        <!-- optional=true,依赖不会传递，该项目依赖devtools； 之后依赖myboot项目的项目如果想要使用devtools，需要重新引入 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <!-- 可选依赖，如果你在项目B中把C依赖声明为可选，你就需要在依赖于B的项目（例如项目A）中显式的引用对C的依赖。可选依赖阻断依赖的传递性。 -->
+            <optional>true</optional>
+        </dependency>
+        <!-- actuator是监控系统健康情况的工具 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-javanica</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
+        <!-- lang3 apache工具包 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <!-- Lombok能以简单的注解形式来简化java代码，提高开发人员的开发效率。例如开发中经常需要写的javabean，都需要花时间去添加相应的getter/setter，也许还要去写构造器、equals等方法， 
+            而且需要维护，当属性多时会出现大量的getter/setter方法，这些显得很冗长也没有太多技术含量，一旦修改属性，就容易出现忘记修改对应方法的失误 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+        </dependency>
+    </dependencies>
+
+    <!-- dependencyManagement：是用于帮助管理chidren的dependencies的 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- 引入 spring-cloud模块 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    
+    <!--发现依赖和扩展的远程仓库列表。 -->
+    <repositories>
+        <!--包含需要连接到远程仓库的信息 -->
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>http://repo.spring.io/milestone</url>
+            <!-- 如何处理远程仓库里快照版本的下载。有了releases和snapshots这两组配置，POM就可以在每个单独的仓库中，为每种类型的构件采取不同的 
+                策略。例如，可能有人会决定只为开发目的开启对快照版本下载的支持。参见repositories/repository/releases元素 -->
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <!--构建项目需要的信息 -->
+    <build>
+        <!--使用的插件列表 -->
+        <plugins>
+            <!--plugin元素包含描述插件所需要的信息。 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <!--作为DOM对象的配置 -->
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <delimiter>$</delimiter>
+                    </delimiters>
+                    <useDefaultDelimiters>false</useDefaultDelimiters>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <modules>
+        <module>wind-service-user</module>
+        <module>wind-service-eureka</module>
+        <module>wind-service-order</module>
+        <module>wind-service-log</module>
+        <module>wind-service-schedule</module>
+        <module>wind-service-fileoperation</module>
+        <module>wind-service-rabbitmq</module>
+        <module>wind-service-redis</module>
+        <module>wind-service-config</module>
+        <module>wind-service-zuul</module>
+        <module>wind-service-front</module>
+        <module>wind-service-hystrix</module>
+        <module>wind-service-managerment</module>
+    </modules>
+</project>

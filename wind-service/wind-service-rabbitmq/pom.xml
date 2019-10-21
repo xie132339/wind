@@ -4,39 +4,35 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>wind</groupId>
-        <artifactId>wind</artifactId>
+        <groupId>wind-service</groupId>
+        <artifactId>wind-service</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>wind-comm</artifactId>
-    <name>wind-comm</name>
-    <description>通用包</description>
+    <groupId>wind-service-rabbitmq</groupId>
+    <artifactId>wind-service-rabbitmq</artifactId>
+
+    <description>rabbitmq高级消息队列</description>
 
     <dependencies>
-        <!-- redis添加 -->
+        <!-- 注册中心 eureka client -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <!-- 集成RabbitMQ -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <!-- lang3 apache工具包 -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
     </dependencies>
 
+    <!-- 构建项目 -->
     <build>
-        <finalName>wind-comm</finalName>
+        <finalName>springcloud-wind-rabbitmq</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <!--在构建生命周期中执行一组目标的配置。每个目标可能有不同的配置。 -->
                 <executions>
                     <execution>
                         <goals>

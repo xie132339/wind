@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head th:replace="common/htmlHead_css :: common_header(~{::title},~{::link})">
+    <title>[[#{login}]]</title>
+</head>
+<body>
+	<!-- Preloader -->
+	<div id="preloader"></div>
+	<!-- ======================================
+    ******* Page Wrapper Area Start **********
+    ======================================= -->
+	<div class="main-content- h-100vh">
+		<div class="container h-100">
+			<div class="row h-100 justify-content-center align-items-center">
+				<div class="col-lg-6 mx-auto">
+					<!-- Middle Box -->
+					<div
+						class="middle-box my-5 text-center bg-white p-4 p-sm-5 bg-boxshadow">
+						<p>
+							<label th:text="#{welcome}"></label>
+						</p>
+						<!-- Form -->
+						<form class="login-form" action="login.html">
+							<!-- Form Group -->
+							<div class="form-group">
+								<input type="email" class="form-control login"
+									th:placeholder="#{user.userName}" required="">
+							</div>
+							<!-- Form Group -->
+							<div class="form-group">
+								<input type="password" class="form-control login"
+									th:placeholder="#{user.password}" required="">
+							</div>
+							<button type="submit"
+								class="btn- btn-success btn-1 btn-1c w-100 text-center">[[#{login}]]</button>
+							<div class="d-flex justify-content-between mt-15">
+								<label class="ckbox"> <input type="checkbox"> <span></span><small
+									class="text-color-gray">[[#{stayLogged}]]</small>
+								</label> <a class="forgot_pass text-color-gray mb-10" href="#"></a> <a
+									class="forgot_pass text-color-gray mb-10" href="#"><small>[[#{forgetThePassword}]]</small></a>
+							</div>
+							<div class="login-icon mt-15 mb-15">
+								<a href="#"><i class="ti-facebook"></i></a> <a
+									class="info-color" href="#"><i class="ti-linkedin"></i></a> <a
+									class="danger-color" href="#"><i class="ti-pinterest"></i></a>
+								<a class="success-color" href="#"><i class="ti-dribbble"></i></a>
+							</div>
+							<p class="text-center  font-size-12">[[#{noAccountYet}]]</p>
+							<a class="btn- btn-primary btn-1 btn-1a  w-100 text-center"
+								th:href="@{/register}">[[#{createAnAccount}]]</a> </br> </br> <a
+								th:href="@{/?lang=en_US}">English</a> <a
+								th:href="@{/?lang=zh_CN}">简体中文</a>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ======================================
+    ********* Page Wrapper Area End ***********
+    ======================================= -->
+    <!--使用公有js-->
+	<div th:replace="common/htmlFooter_js :: common_js(~{::script})">
+	    <!--每个页面自己的js-->
+	    <!-- <script src="js/index.js"></script> -->
+	</div>
+
+</body>
+
+</html>
